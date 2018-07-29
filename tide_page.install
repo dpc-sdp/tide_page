@@ -6,6 +6,7 @@
  */
 
 use Drupal\workflows\Entity\Workflow;
+use Drupal\search_api\Item\Field;
 
 /**
  * Implements hook_install().
@@ -20,6 +21,9 @@ function tide_page_install() {
       $editorial_workflow->save();
     }
   }
+
+  // Add relevant fields to search API index.
+  _tide_page_add_fields_search_api();
 }
 
 /**
@@ -81,5 +85,28 @@ function tide_page_update_8002() {
         $node->save();
       }
     }
+  }
+}
+
+/**
+ * Add fields to search API.
+ */
+function _tide_page_add_fields_search_api() {
+
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('tide_site')) {
+    $index_storage = \Drupal::entityTypeManager()
+      ->getStorage('search_api_index');
+    $index = $index_storage->load('node');
+
+    // Index the Intro field.
+    $field_page_intro = new Field($index, 'field_page_intro_text');
+    $field_page_intro->setType('text');
+    $field_page_intro->setPropertyPath('field_page_intro_text');
+    $field_page_intro->setDatasourceId('entity:node');
+    $field_page_intro->setLabel('Introduction text');
+    $index->addField($field_page_intro);
+
+    $index->save();
   }
 }
