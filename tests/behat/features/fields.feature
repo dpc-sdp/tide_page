@@ -106,6 +106,8 @@ Feature: Fields for Page content type
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
 
+    And I see field "Show topic term and tags?"
+
   @api
   Scenario: The content type has the menu settings.
     Given I am logged in as a user with the "create page content, administer menu" permission
