@@ -4,8 +4,8 @@
     "type": "drupal-module",
     "license": "GPL-2.0+",
     "require": {
-        "dpc-sdp/tide_core": "@dev",
-        "dpc-sdp/tide_media": "@dev",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-1328-timeline-api-overwrites",
+        "dpc-sdp/tide_media": "dev-feature/SDPA-1328_timeline-api-overwrites",
         "drupal/smart_trim": "^1.1"
     },
     "suggest": {
