@@ -52,7 +52,7 @@ Feature: Fields for Page content type
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
 
-    And I see field "SShow topic term and tags?"
+    And I see field "Show topic term and tags?"
     And I should see an "input#edit-field-show-topic-term-and-tags-value" element
     And I should not see an "input#edit-field-show-topic-term-and-tags-value.required" element
 
@@ -108,7 +108,7 @@ Feature: Fields for Page content type
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
 
-    And I see field "SShow topic term and tags?"
+    And I see field "Show topic term and tags?"
     And I should see an "input#edit-field-show-topic-term-and-tags-value" element
     And I should not see an "input#edit-field-show-topic-term-and-tags-value.required" element
 
