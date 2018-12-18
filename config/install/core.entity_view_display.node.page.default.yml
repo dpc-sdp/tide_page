@@ -6,21 +6,29 @@ dependencies:
     - field.field.node.page.field_featured_image
     - field.field.node.page.field_graphical_image
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_node_primary_site
+    - field.field.node.page.field_node_site
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_related_links
+    - field.field.node.page.field_show_content_rating
     - field.field.node.page.field_show_related_content
     - field.field.node.page.field_show_social_sharing
     - field.field.node.page.field_show_table_of_content
+    - field.field.node.page.field_show_topic_term_and_tags
     - field.field.node.page.field_show_whats_next
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
     - field.field.node.page.field_whats_next
+    - field.field.node.page.scheduled_archiving
+    - field.field.node.page.scheduled_publishing
     - node.type.page
   module:
     - entity_reference_revisions
     - metatag
     - text
     - user
+_core:
+  default_config_hash: Jsv0TagVWyg1TOqhqIYsPncBO85lvHP4p5jGi4omQpk
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -78,6 +86,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_show_topic_term_and_tags:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_tags:
     weight: 8
     label: above
@@ -109,8 +127,12 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_node_primary_site: true
+  field_node_site: true
   field_show_content_rating: true
   field_show_related_content: true
   field_show_social_sharing: true
-  field_show_whats_next: true
   field_show_table_of_content: true
+  field_show_whats_next: true
+  scheduled_archiving: true
+  scheduled_publishing: true
