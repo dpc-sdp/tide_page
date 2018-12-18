@@ -42,7 +42,6 @@ Feature: Fields for Page content type
     And I should see the button "Add Related links" in the "content" region
 
     And I should see text matching "What's Next"
-    And I should see text matching "No What's Next block added yet."
     And I should see the button "Add Link" in the "content" region
 
     And I see field "Show What's Next?"
@@ -99,7 +98,6 @@ Feature: Fields for Page content type
     And I should see the button "Add Related links" in the "content" region
 
     And I should see text matching "What's Next"
-    And I should see text matching "No What's Next block added yet."
     And I should see the button "Add Link" in the "content" region
 
     And I see field "Show What's Next?"
