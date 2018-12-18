@@ -95,8 +95,6 @@ third_party_settings:
         required_fields: true
       label: Other
       region: content
-_core:
-  default_config_hash: 7r8LGwT-wAKWc_vAKpm5fwdobDCifpcC8Q5-FRyCNYU
 id: node.page.default
 targetEntityType: node
 bundle: page

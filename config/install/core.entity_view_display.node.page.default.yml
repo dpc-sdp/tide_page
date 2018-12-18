@@ -27,8 +27,6 @@ dependencies:
     - metatag
     - text
     - user
-_core:
-  default_config_hash: Jsv0TagVWyg1TOqhqIYsPncBO85lvHP4p5jGi4omQpk
 id: node.page.default
 targetEntityType: node
 bundle: page
