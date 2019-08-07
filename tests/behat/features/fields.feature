@@ -60,6 +60,8 @@ Feature: Fields for Page content type
   Scenario: The content type has the expected fields (and labels where we can use them) including from suggested modules.
     Given I am logged in as a user with the "create page content" permission
     When I visit "node/add/page"
+    And I save screenshot
+
     Then I see field "Title"
     And I should see an "input#edit-title-0-value.required" element
 
@@ -116,5 +118,7 @@ Feature: Fields for Page content type
   Scenario: The content type has the menu settings.
     Given I am logged in as a user with the "create page content, administer menu" permission
     When I visit "node/add/page"
-    And I should see the text "Menu settings"
+    And I save screenshot
+
+    Then I should see the text "Menu settings"
     And I see field "Provide a menu link"

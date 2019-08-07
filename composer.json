@@ -2,29 +2,20 @@
     "name": "dpc-sdp/tide_page",
     "description": "Page content type and related configuration for Tide Drupal 8 distribution",
     "type": "drupal-module",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_core": "dev-master",
-        "dpc-sdp/tide_media": "dev-master",
+        "dpc-sdp/tide_core": "^1.2.5",
+        "dpc-sdp/tide_media": "^1.2.5",
         "drupal/smart_trim": "^1.1"
     },
     "suggest": {
-        "dpc-sdp/tide_api": "Allows to use Drupal in headless mode",
-        "dpc-sdp/tide_webform": "Allows to use questionnaires"
+        "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode",
+        "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
     },
     "repositories": {
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "platform": {
-            "php": "7.1"
-        },
-        "process-timeout": 0,
-        "sort-packages": true
     }
 }
