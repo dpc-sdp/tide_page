@@ -129,3 +129,4 @@ hidden:
   field_show_whats_next: true
   scheduled_archiving: true
   scheduled_publishing: true
+  field_show_topic_term_and_tags: true
