@@ -7,6 +7,7 @@
 
 use Drupal\workflows\Entity\Workflow;
 use Drupal\search_api\Item\Field;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_install().
@@ -108,5 +109,52 @@ function _tide_page_add_fields_search_api() {
     $index->addField($field_page_intro);
 
     $index->save();
+  }
+}
+
+/**
+ * Add field_show_topic_term_and_tags.
+ */
+function tide_page_update_8003() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_page') . '/config/install'];
+  _tide_import_single_config('field.field.node.page.field_show_topic_term_and_tags', $config_location);
+}
+
+/**
+ * Updates field_show_topic_term_and_tags default value for current page nodes.
+ */
+function tide_page_update_8004(&$sandbox) {
+  if (!isset($sandbox['total'])) {
+    if ($count = \Drupal::entityQuery('node')
+      ->condition('type', 'page')
+      ->count()
+      ->execute()) {
+      $sandbox['total'] = $count;
+      $sandbox['current'] = 0;
+      $sandbox['#finished'] = $count ? 0 : 1;
+    }
+    else {
+      return;
+    }
+  }
+  $batch = 10;
+  $page_ids = \Drupal::entityQuery('node')
+    ->condition('type', 'page')
+    ->range($sandbox['current'], $batch)
+    ->execute();
+  foreach ($page_ids as $page_id) {
+    $page_node = Node::load($page_id);
+    if ($page_node->hasField('field_show_topic_term_and_tags')) {
+      $page_node->set('field_show_topic_term_and_tags', 1);
+      $page_node->save();
+    }
+    $sandbox['current']++;
+  }
+  if ($sandbox['total'] == 0) {
+    $sandbox['#finished'] = 1;
+  }
+  else {
+    $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
   }
 }
