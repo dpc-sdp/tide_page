@@ -52,6 +52,10 @@ Feature: Fields for Page content type
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
 
+    And I see field "Show topic term and tags?"
+    And I should see an "input#edit-field-show-topic-term-and-tags-value" element
+    And I should not see an "input#edit-field-show-topic-term-and-tags-value.required" element
+
   @api @suggest
   Scenario: The content type has the expected fields (and labels where we can use them) including from suggested modules.
     Given I am logged in as a user with the "create page content" permission
@@ -105,6 +109,10 @@ Feature: Fields for Page content type
     And I see field "Show Table of Content?"
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
+
+    And I see field "Show topic term and tags?"
+    And I should see an "input#edit-field-show-topic-term-and-tags-value" element
+    And I should not see an "input#edit-field-show-topic-term-and-tags-value.required" element
 
   @api
   Scenario: The content type has the menu settings.

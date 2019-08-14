@@ -212,22 +212,6 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_node_primary_site:
-    fieldName: field_node_primary_site
-    publicName: field_node_primary_site
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_node_site:
-    fieldName: field_node_site
-    publicName: field_node_site
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   field_page_intro_text:
     fieldName: field_page_intro_text
     publicName: field_page_intro_text

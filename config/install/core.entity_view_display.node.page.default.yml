@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.page.field_show_related_content
     - field.field.node.page.field_show_social_sharing
     - field.field.node.page.field_show_table_of_content
+    - field.field.node.page.field_show_topic_term_and_tags
     - field.field.node.page.field_show_whats_next
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
@@ -78,6 +79,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_show_topic_term_and_tags:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_tags:
     weight: 8
     label: above
@@ -112,5 +123,8 @@ hidden:
   field_show_content_rating: true
   field_show_related_content: true
   field_show_social_sharing: true
-  field_show_whats_next: true
   field_show_table_of_content: true
+  field_show_whats_next: true
+  scheduled_archiving: true
+  scheduled_publishing: true
+  field_show_topic_term_and_tags: true

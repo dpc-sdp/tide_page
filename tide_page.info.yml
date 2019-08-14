@@ -28,6 +28,7 @@ config_devel:
     - field.field.node.page.field_featured_image
     - field.field.node.page.field_metatags
     - field.field.node.page.field_page_intro_text
+    - field.field.node.page.field_show_topic_term_and_tags
     - field.field.node.page.field_whats_next
     - field.field.node.page.field_show_content_rating
     - field.field.node.page.field_show_whats_next
