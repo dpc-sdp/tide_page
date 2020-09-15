@@ -53,6 +53,8 @@ function tide_page_install() {
 function tide_page_update_dependencies() {
   $dependencies['tide_page'][8001] = ['tide_core' => 8001];
   $dependencies['tide_page'][8002] = ['tide_core' => 8002];
+  $dependencies['tide_page'][8006] = ['tide_core' => 8036];
+
   return $dependencies;
 }
 
@@ -251,7 +253,7 @@ function tide_page_update_8006() {
 
   $config->save();
 
-  // Add to JSON
+  // Add to JSON.
   $json_config = $config_factory->getEditable('jsonapi_extras.jsonapi_resource_config.node--page');
 
   $json_content = $json_config->get('resourceFields');

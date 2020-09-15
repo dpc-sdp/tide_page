@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Tide Page module functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function tide_page_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_page_form', 'node_page_edit_form'])) {
+    // Add conditional field for show table of content.
+    if (isset($form['field_node_display_headings'])) {
+      $form['field_node_display_headings']['#states'] = [
+        'visible' => [
+          ':input[name="field_show_table_of_content[value]"]' => [
+            'checked' => TRUE
+          ],
+        ],
+      ];
+    }
+  }
+}
