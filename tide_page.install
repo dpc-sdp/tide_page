@@ -53,7 +53,7 @@ function tide_page_install() {
 function tide_page_update_dependencies() {
   $dependencies['tide_page'][8001] = ['tide_core' => 8001];
   $dependencies['tide_page'][8002] = ['tide_core' => 8002];
-  $dependencies['tide_page'][8006] = ['tide_core' => 8036];
+  $dependencies['tide_page'][8006] = ['tide_core' => 8037];
 
   return $dependencies;
 }
