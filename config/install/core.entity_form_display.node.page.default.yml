@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.field_featured_image
     - field.field.node.page.field_graphical_image
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_node_display_headings
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_related_links
     - field.field.node.page.field_show_related_content
@@ -79,6 +80,7 @@ third_party_settings:
         - field_show_social_sharing
         - field_show_content_rating
         - field_show_table_of_content
+        - field_node_display_headings
       parent_name: group_right_column
       weight: 8
       format_type: tab
@@ -145,6 +147,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
+  field_node_display_headings:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   field_page_intro_text:
     weight: 3
