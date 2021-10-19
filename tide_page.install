@@ -33,6 +33,7 @@ function tide_page_install() {
     $bundles = $config->get('bundles');
     if ($bundles) {
       foreach ($bundles as $bundle) {
+        $enabled_bundles = [];
         $enabled_bundles[] = $bundle['bundle'];
       }
       if (!in_array('page', $enabled_bundles)) {
@@ -51,6 +52,7 @@ function tide_page_install() {
  * Implements hook_update_dependencies().
  */
 function tide_page_update_dependencies() {
+  $dependencies = [];
   $dependencies['tide_page'][8001] = ['tide_core' => 8001];
   $dependencies['tide_page'][8002] = ['tide_core' => 8002];
   $dependencies['tide_page'][8006] = ['tide_core' => 8037];
@@ -191,6 +193,7 @@ function tide_page_update_8005() {
     $bundles = $config->get('bundles');
     if ($bundles) {
       foreach ($bundles as $bundle) {
+        $enabled_bundles = [];
         $enabled_bundles[] = $bundle['bundle'];
       }
       if (!in_array('page', $enabled_bundles)) {
