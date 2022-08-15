@@ -48,12 +48,12 @@ Feature: Fields for Page content type
     And I should see an "input#edit-field-show-whats-next-value" element
     And I should not see an "input#edit-field-show-whats-next-value.required" element
 
-    And I see field "Show Table of Content?"
+    And I see field "Show table of contents"
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
 
     When I check "edit-field-show-table-of-content-value"
-    Then I should see text matching "Display headings"
+    Then I should see text matching "Choose headings to display"
     And I should see an "input#edit-field-node-display-headings-showh2" element
     And I should see an "input#edit-field-node-display-headings-showh2andh3" element
 
@@ -111,12 +111,12 @@ Feature: Fields for Page content type
     And I should see an "input#edit-field-show-whats-next-value" element
     And I should not see an "input#edit-field-show-whats-next-value.required" element
 
-    And I see field "Show Table of Content?"
+    And I see field "Show table of contents"
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
 
     When I check "edit-field-show-table-of-content-value"
-    Then I should see text matching "Display headings"
+    Then I should see text matching "Choose headings to display"
     And I should see an "input#edit-field-node-display-headings-showh2" element
     And I should see an "input#edit-field-node-display-headings-showh2andh3" element
 
