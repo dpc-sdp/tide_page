@@ -65,7 +65,7 @@ function tide_page_update_dependencies() {
  */
 function tide_page_update_8001() {
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  $config_location = [drupal_get_path('module', 'tide_page') . '/config/install'];
+  $config_location = [\Drupal::service('extension.list.module')->getPath('tide_page') . '/config/install'];
   _tide_import_single_config('field.field.node.page.field_show_related_content', $config_location);
   _tide_import_single_config('field.field.node.page.field_show_social_sharing', $config_location);
 
@@ -96,7 +96,7 @@ function tide_page_update_8001() {
  */
 function tide_page_update_8002() {
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  $config_location = [drupal_get_path('module', 'tide_page') . '/config/install'];
+  $config_location = [\Drupal::service('extension.list.module')->getPath('tide_page') . '/config/install'];
   _tide_import_single_config('field.field.node.page.field_featured_image', $config_location);
 
   $pages = \Drupal::entityTypeManager()->getStorage('node')
@@ -141,7 +141,7 @@ function _tide_page_add_fields_search_api() {
  */
 function tide_page_update_8003() {
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  $config_location = [drupal_get_path('module', 'tide_page') . '/config/install'];
+  $config_location = [\Drupal::service('extension.list.module')->getPath('tide_page') . '/config/install'];
   _tide_import_single_config('field.field.node.page.field_show_topic_term_and_tags', $config_location);
 }
 
@@ -213,7 +213,7 @@ function tide_page_update_8005() {
  */
 function tide_page_update_8006() {
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  $config_location = [drupal_get_path('module', 'tide_page') . '/config/install'];
+  $config_location = [\Drupal::service('extension.list.module')->getPath('tide_page') . '/config/install'];
   $new_field = 'field.field.node.page.field_node_display_headings';
   $config_read = _tide_read_config($new_field, $config_location, TRUE);
   // Obtain the storage manager for field instances.
